@@ -1,0 +1,14 @@
+{% extends 'pages/base.html' %}
+
+{% block title %}Hospitals{% endblock title %}
+
+{% block content %}
+    {% for hospital in hospitals %}
+        <div>
+            <h2>{{hospital.name}}</h2>
+            Contact: {{hospital.contact}}<br />
+            Address: {{ hospital.address|truncatechars:7 }}<br />
+            {{hospital.city}}&nbsp;&nbsp;{{hospital.address}}<br /><br /><br />
+        </div>
+    {% endfor %}
+{% endblock content %}
